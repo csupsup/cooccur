@@ -57,7 +57,7 @@ function(mod){
     variable <- md$variable  
     
   p <- ggplot(data=md, aes(x=sppname, y=value, fill=variable) ) + geom_bar(stat = "identity",position = "stack",width=1)
-  p <- p + scale_fill_manual(values = c("light blue","#FFCC66","dark gray"), name = "", labels = c("positive","negative","random")) + theme(plot.title = element_text(vjust=2,size=20, face="bold"),legend.text=element_text(size=18),axis.title.y = element_text(size = 20),axis.text.y=element_text(size=18),axis.text.x=element_text(size=12,hjust=0,vjust=1,angle=-45), panel.background = element_rect(fill='white', colour='black'),panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + xlab("") + ylab("Percent of pairings")
+  p <- p + scale_fill_manual(values = c("lightblue","#FFCC66","darkgray"), name = "", labels = c("positive","negative","random")) + theme(plot.title = element_text(vjust=2,size=20, face="bold"),legend.text=element_text(size=18),axis.title.y = element_text(size = 20),axis.text.y=element_text(size=18),axis.text.x=element_text(size=12,hjust=0,vjust=1,angle=-45), panel.background = element_rect(fill='white', colour='black'),panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + xlab("") + ylab("Percent of pairings")
   p <- p + ggtitle("Species Association Profile") + scale_y_continuous(expand = c(0.005,0)) + scale_x_discrete(expand=c(0.005, 0))
       p <- p + geom_bar(stat = "identity",data=md[(md$sppname=="All Species"),], aes(sppname), alpha=0, size=0.1, color="white",width=1)
   p
@@ -67,7 +67,7 @@ function(mod){
       profiles <- rbind(profiles,sidebar)
   md <- melt(profiles, id=(c("spp")))
   p <- ggplot(data=md, aes(x=spp, y=value, fill=variable) ) + geom_bar(stat = "identity",position = "stack",width=1)
-  p <- p + scale_fill_manual(values = c("light blue","#FFCC66","dark gray"), name = "", labels = c("positive","negative","random")) + theme(plot.title = element_text(vjust=2,size=20, face="bold"),legend.text=element_text(size=18),axis.title.y = element_text(size = 20),axis.text.y=element_text(size=18),axis.text.x=element_text(size=12,hjust=0,vjust=1), panel.background = element_rect(fill='white', colour='black'),panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + xlab("") + ylab("Percent of pairings")
+  p <- p + scale_fill_manual(values = c("lightblue","#FFCC66","darkgray"), name = "", labels = c("positive","negative","random")) + theme(plot.title = element_text(vjust=2,size=20, face="bold"),legend.text=element_text(size=18),axis.title.y = element_text(size = 20),axis.text.y=element_text(size=18),axis.text.x=element_text(size=12,hjust=0,vjust=1), panel.background = element_rect(fill='white', colour='black'),panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + xlab("") + ylab("Percent of pairings")
   p <- p + ggtitle("Species Association Profile") + scale_y_continuous(expand = c(0.005,0)) + scale_x_discrete(expand=c(0.005, 0))
     p <- p + geom_bar(stat = "identity",data=md[(md$spp=="All Species"),], aes(spp), alpha=0, size=0.1, color="white",width=1) + theme(axis.text.x=element_text(hjust=0,vjust=1,angle=-45))
   p
