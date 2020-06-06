@@ -131,7 +131,7 @@ function(x, ...){
   ####
  if(randsummary == FALSE){  
     p <- ggplot(df.lower, aes(X1, X2)) + geom_tile(aes(fill = factor(value,levels=c(-1,0,1))), colour ="white") 
- p <- p + scale_fill_manual(values = c("#FFCC66","dark gray","light blue"), name = "", labels = c("negative","random","positive"),drop=FALSE) + 
+ p <- p + scale_fill_manual(values = c("#FFCC66","darkgray","lightblue"), name = "", labels = c("negative","random","positive"),drop=FALSE) + 
     theme(axis.text.x = element_blank(),axis.text.y = element_blank(),axis.ticks = element_blank(),plot.title = element_text(vjust=-4,size=20, face="bold"),panel.background = element_rect(fill='white', colour='white'),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),legend.position = c(0.9, 0.5),legend.text=element_text(size=18)) + 
     ggtitle("Species Co-occurrence Matrix") + 
     xlab("") + ylab("") + 
@@ -143,7 +143,7 @@ function(x, ...){
       }else{
         
          p <- ggplot(df.lower, aes(X1, X2)) + geom_tile(aes(fill = factor(value,levels=c(-1,0,1,-2))), colour ="white") 
- p <- p + scale_fill_manual(values = c("#FFCC66","dark gray","light blue","light gray"), name = "", labels = c("negative","random","positive","random"),drop=FALSE) + 
+ p <- p + scale_fill_manual(values = c("#FFCC66","darkgray","lightblue","lightgray"), name = "", labels = c("negative","random","positive","random"),drop=FALSE) + 
     theme(axis.text.x = element_blank(),axis.text.y = element_blank(),axis.ticks = element_blank(),plot.title = element_text(vjust=-4,size=20, face="bold"),panel.background = element_rect(fill='white', colour='white'),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),legend.position = c(0.9, 0.5),legend.text=element_text(size=18)) + 
     ggtitle("Species Co-occurrence Matrix") + 
     xlab("") + ylab("") + 
